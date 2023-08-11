@@ -1,12 +1,13 @@
 /* eslint-disable */
 import "bootstrap";
 import "./style.css";
-
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
+
 window.onload = function() {
-  //write your code here
+  /* Declarando los arrays que tendra cada elemento de la excusa que se va 
+     a generar y llamando el id donde se va a introducir la excusa en el HTML*/
   let excuse = document.querySelector("#excuse");
   let who = ["The dog", "My grandma", "His turtle", "My bird"];
   let action = ["ate", "peed", "crushed", "broke"];
@@ -18,20 +19,22 @@ window.onload = function() {
     "during my lunch",
     "while I was praying"
   ];
-
+  /* En este funcion se esta llamando y recorriendo de forma aleatoria 
+     cada elemento de los array declarados anteriormente e 
+     introduciendo el string en el HTML que mostrara la excusa generada*/
   const generateExcuse = () => {
-    let whoLista = Math.floor(Math.random() * who.length);
-    let actionLista = Math.floor(Math.random() * action.length);
-    let whatLista = Math.floor(Math.random() * what.length);
-    let whenLista = Math.floor(Math.random() * when.length);
+    let whoIndice = Math.floor(Math.random() * who.length);
+    let actionIndice = Math.floor(Math.random() * action.length);
+    let whatIndice = Math.floor(Math.random() * what.length);
+    let whenIndice = Math.floor(Math.random() * when.length);
     excuse.innerHTML =
-      who[whoLista] +
+      who[whoIndice] +
       " " +
-      action[actionLista] +
+      action[actionIndice] +
       " " +
-      what[whatLista] +
+      what[whatIndice] +
       " " +
-      when[whenLista];
+      when[whenIndice];
   };
 
   generateExcuse();
